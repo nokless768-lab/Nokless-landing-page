@@ -3,6 +3,9 @@ import SiteNav from '../components/SiteNav.jsx'
 import SiteFooter from '../components/SiteFooter.jsx'
 import Logo from '../components/Logo.jsx'
 import BrandShowcase from '../components/BrandShowcase.jsx'
+import { Link } from 'react-router-dom'
+import { posts } from '../lib/posts.js'
+import { PostCard } from './Blog.jsx'
 
 const whyCards = [
   ['🔧', 'Hardware-free', 'Reduce dependence on traditional intercom and access hardware installations.'],
@@ -27,12 +30,6 @@ const faqs = [
   ['Do I need to install hardware?', 'No. Nokless is a software-first platform, so you can introduce a digital access workflow without a complicated physical installation.'],
   ['Who is Nokless for?', 'Individual properties and growing organizations with multiple locations, including homes, estates, hotels, hospitals and companies.'],
   ['How will pricing work?', 'The product is being shaped around two simple models: flexible usage-based access for lighter needs and a predictable subscription for teams or organizations with recurring volume. Final plan details will be announced soon.'],
-]
-
-const posts = [
-  { tag: 'Field notes', date: 'Sep 18, 2026', title: 'Why visitor management needs a better trust layer', body: 'A practical look at the gap between letting someone in and feeling confident about who is at your gate.' },
-  { tag: 'Product', date: 'Sep 05, 2026', title: 'From access log to digital record', body: 'How simple check-in and check-out records give properties clearer, faster visibility.' },
-  { tag: 'Community', date: 'Aug 22, 2026', title: 'Estates going digital', body: 'How residential communities are rethinking gate communication and visitor requests.' },
 ]
 
 function Arrow() {
@@ -97,9 +94,11 @@ export default function Home() {
 
         <BrandShowcase />
 
+        <section className="section about-section" id="about"><div className="container about-grid"><div><div className="eyebrow">About us</div><h2>Smarter, simpler, more accessible access.</h2><div className="about-copy"><p><strong>Nokless Technologies Limited</strong> is a technology company building smarter, simpler, and more accessible ways for people and organizations to manage access and visitor interactions.</p><p>We are developing a hardware-free access management platform designed for homes, businesses, estates, hotels, offices, and other environments where secure and convenient visitor management matters.</p><p>Nokless is designed to help hosts and organizations manage visitors, communicate with guests, keep track of visits, and improve how access is handled—all through a convenient digital experience.</p></div></div><div className="about-side"><div className="about-approach"><span className="tiny-label">OUR APPROACH</span><p>Our approach is simple:</p><ol><li>Reduce unnecessary hardware</li><li>Simplify access</li><li>Make everyday interactions safer and more connected through software</li></ol></div><div className="about-eco"><span className="tiny-label">BEYOND ACCESS MANAGEMENT</span><p>We are building a broader ecosystem that can support businesses, property managers, artisans, technicians, students, and small business owners through digital tools and services.</p><div className="about-tags">{['Businesses', 'Property managers', 'Artisans', 'Technicians', 'Students', 'Small business owners'].map((t) => <span key={t}>{t}</span>)}</div></div></div></div><div className="container"><blockquote className="about-vision"><span className="tiny-label">OUR VISION</span>Our vision is to build technology that solves real-world problems without making people's lives more complicated.</blockquote></div></section>
+
         <section className="section pricing-section" id="pricing"><div className="container pricing-wrap"><div><div className="eyebrow">A plan that can grow with you</div><h2>Simple by design.<br /><span>Flexible by need.</span></h2><p>We are shaping Nokless around two clear ways to pay, so you can start light and scale when the work grows. Final plan details are being guided by our CTO and will be announced soon.</p></div><div className="pricing-cards"><div className="pricing-card"><span className="pricing-tag">For occasional use</span><h3>Pay as you go</h3><p>Use the access and visit tools you need, when you need them. A practical starting point for individuals and lighter usage.</p><span className="pricing-note">Usage-based · Details coming soon</span></div><div className="pricing-card pricing-card-accent"><span className="pricing-tag">For growing teams</span><h3>Subscription</h3><p>Predictable access management and investigation tools for businesses with recurring visits and more people to coordinate.</p><span className="pricing-note">Monthly · Details coming soon</span></div></div></div></section>
 
-        <section className="section blog-section" id="blog"><div className="container"><div className="section-heading-row"><div><div className="eyebrow">From the Nokless journal</div><h2>Ideas for safer spaces.</h2></div><a href="#newsletter" className="text-link">Get new stories <Arrow /></a></div><div className="blog-grid">{posts.map((post) => <article className="blog-card" key={post.title}><div className="blog-art"><span>{post.tag}</span><b>{post.title.slice(0, 1)}</b></div><div className="blog-meta"><span>{post.tag}</span><span>{post.date}</span></div><h3>{post.title}</h3><p>{post.body}</p><a href="#newsletter" className="card-arrow">Read more <Arrow /></a></article>)}</div></div></section>
+        <section className="section blog-section" id="blog"><div className="container"><div className="section-heading-row"><div><div className="eyebrow">From the Nokless journal</div><h2>Ideas for safer spaces.</h2></div><Link to="/blog" className="text-link">View all articles <Arrow /></Link></div><div className="blog-grid">{posts.slice(0, 3).map((post) => <PostCard key={post.slug} post={post} />)}</div></div></section>
 
         <section className="section testimonial-section" id="testimonials"><div className="container testimonial-head"><div className="eyebrow">Testimonials</div><h2>What early users are saying.</h2></div><div className="container testimonial-card"><div className="quote-mark">“</div><blockquote>“Nokless has made our visitor management process much easier to organize.”</blockquote><div className="quote-author"><span className="author-avatar">EU</span><span><strong>Early User</strong><small>Beta Tester</small></span></div></div></section>
 
