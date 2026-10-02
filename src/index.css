@@ -173,3 +173,8 @@ h1 em { color:var(--indigo); font-style:normal; }
 .related-title { margin-bottom:0; }
 @media (max-width:900px) { .about-grid { grid-template-columns:1fr; gap:36px; } }
 @media (max-width:600px) { .about-vision { padding:28px 24px; margin-top:40px; }.blog-card p { display:block; font-size:11px; } }
+
+.footer-links { grid-template-columns:repeat(4,1fr); }
+.footer-grid { grid-template-columns:.8fr 1.6fr; gap:50px; }
+@media (max-width:900px) { .footer-grid { grid-template-columns:1fr; } }
+@media (max-width:600px) { .footer-links { grid-template-columns:1fr 1fr; gap:28px 18px; } }
