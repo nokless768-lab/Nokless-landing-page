@@ -178,3 +178,6 @@ h1 em { color:var(--indigo); font-style:normal; }
 .footer-grid { grid-template-columns:.8fr 1.6fr; gap:50px; }
 @media (max-width:900px) { .footer-grid { grid-template-columns:1fr; } }
 @media (max-width:600px) { .footer-links { grid-template-columns:1fr 1fr; gap:28px 18px; } }
+
+.footer-links { grid-template-columns:repeat(3,1fr); }
+@media (max-width:600px) { .footer-links { grid-template-columns:1fr 1fr; } }

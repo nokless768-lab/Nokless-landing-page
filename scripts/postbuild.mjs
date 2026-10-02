@@ -22,7 +22,7 @@ function page(route, title, description) {
 }
 
 const routes = ['/']
-page('/blog', 'Nokless Journal — Visitor management & access security guides', 'Guides and ideas on visitor management, estate security, hotel check-in and hospital access from Nokless.'); routes.push('/blog')
+page('/blog', 'Nokless Blog — Visitor management & access security guides', 'Guides and ideas on visitor management, estate security, hotel check-in and hospital access from Nokless.'); routes.push('/blog')
 for (const p of posts) { page(`/blog/${p.slug}`, `${p.title} | Nokless`, p.description); routes.push(`/blog/${p.slug}`) }
 page('/privacy', 'Privacy Policy | Nokless', 'Privacy Policy for Nokless Technologies Limited.'); routes.push('/privacy')
 page('/terms', 'Terms of Service | Nokless', 'Terms of Service for Nokless Technologies Limited.'); routes.push('/terms')

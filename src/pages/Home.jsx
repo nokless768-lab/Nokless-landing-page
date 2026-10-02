@@ -3,9 +3,6 @@ import SiteNav from '../components/SiteNav.jsx'
 import SiteFooter from '../components/SiteFooter.jsx'
 import Logo from '../components/Logo.jsx'
 import BrandShowcase from '../components/BrandShowcase.jsx'
-import { Link } from 'react-router-dom'
-import { posts } from '../lib/posts.js'
-import { PostCard } from './Blog.jsx'
 
 const whyCards = [
   ['🔧', 'Hardware-free', 'Reduce dependence on traditional intercom and access hardware installations.'],
@@ -98,7 +95,6 @@ export default function Home() {
 
         <section className="section pricing-section" id="pricing"><div className="container pricing-wrap"><div><div className="eyebrow">A plan that can grow with you</div><h2>Simple by design.<br /><span>Flexible by need.</span></h2><p>We are shaping Nokless around two clear ways to pay, so you can start light and scale when the work grows. Final plan details are being guided by our CTO and will be announced soon.</p></div><div className="pricing-cards"><div className="pricing-card"><span className="pricing-tag">For occasional use</span><h3>Pay as you go</h3><p>Use the access and visit tools you need, when you need them. A practical starting point for individuals and lighter usage.</p><span className="pricing-note">Usage-based · Details coming soon</span></div><div className="pricing-card pricing-card-accent"><span className="pricing-tag">For growing teams</span><h3>Subscription</h3><p>Predictable access management and investigation tools for businesses with recurring visits and more people to coordinate.</p><span className="pricing-note">Monthly · Details coming soon</span></div></div></div></section>
 
-        <section className="section blog-section" id="blog"><div className="container"><div className="section-heading-row"><div><div className="eyebrow">From the Nokless journal</div><h2>Ideas for safer spaces.</h2></div><Link to="/blog" className="text-link">View all articles <Arrow /></Link></div><div className="blog-grid">{posts.slice(0, 3).map((post) => <PostCard key={post.slug} post={post} />)}</div></div></section>
 
         <section className="section testimonial-section" id="testimonials"><div className="container testimonial-head"><div className="eyebrow">Testimonials</div><h2>What early users are saying.</h2></div><div className="container testimonial-card"><div className="quote-mark">“</div><blockquote>“Nokless has made our visitor management process much easier to organize.”</blockquote><div className="quote-author"><span className="author-avatar">EU</span><span><strong>Early User</strong><small>Beta Tester</small></span></div></div></section>
 

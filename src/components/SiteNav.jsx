@@ -7,7 +7,7 @@ const LINKS = [
   { href: '/#why-nokless', label: 'Why Nokless' },
   { href: '/#solutions', label: 'Solutions' },
   { href: '/#about', label: 'About' },
-  { href: '/blog', label: 'Journal' },
+  { href: '/blog', label: 'Blog' },
   { href: '/#pricing', label: 'Pricing' },
 ]
 
