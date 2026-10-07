@@ -6,8 +6,10 @@ import path from 'node:path'
 
 const dist = 'dist'
 const base = fs.readFileSync(path.join(dist, 'index.html'), 'utf8')
-const src = fs.readFileSync('src/lib/posts.js', 'utf8').replace('export const posts', 'const posts')
-const posts = new Function(`${src}; return posts`)()
+const dirBlog = 'src/content/blog'
+const posts = fs.existsSync(dirBlog) ? fs.readdirSync(dirBlog).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(fs.readFileSync(path.join(dirBlog, f), 'utf8'))) : []
+const solSrc = fs.readFileSync('src/lib/solutions.js', 'utf8').replace('export const solutions', 'const solutions')
+const solutions = new Function(`${solSrc}; return solutions`)()
 const SITE = (process.env.SITE_URL || '').replace(/\/$/, '')
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
 
@@ -22,8 +24,10 @@ function page(route, title, description) {
 }
 
 const routes = ['/']
-page('/blog', 'Nokless Blog — Visitor management & access security guides', 'Guides and ideas on visitor management, estate security, hotel check-in and hospital access from Nokless.'); routes.push('/blog')
+page('/blog', 'Nokless Blog — News and stories', 'News and stories from the team building Nokless, the hardware-free access management platform.'); routes.push('/blog')
 for (const p of posts) { page(`/blog/${p.slug}`, `${p.title} | Nokless`, p.description); routes.push(`/blog/${p.slug}`) }
+for (const x of solutions) { page(`/solutions/${x.slug}`, `${x.title} | Nokless`, x.description); routes.push(`/solutions/${x.slug}`) }
+page('/blog/new', 'New blog post | Nokless', 'Create a Nokless blog post.')
 page('/privacy', 'Privacy Policy | Nokless', 'Privacy Policy for Nokless Technologies Limited.'); routes.push('/privacy')
 page('/terms', 'Terms of Service | Nokless', 'Terms of Service for Nokless Technologies Limited.'); routes.push('/terms')
 

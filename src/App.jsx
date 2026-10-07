@@ -1,6 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './lib/auth.jsx'
 import Home from './pages/Home.jsx'
+import Solution from './pages/Solution.jsx'
+import NewPost from './pages/NewPost.jsx'
 import Legal from './pages/Legal.jsx'
 import ScrollManager from './components/ScrollManager.jsx'
 import Blog from './pages/Blog.jsx'
@@ -15,6 +17,8 @@ export default function App() {
       <ScrollManager />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/solutions/:slug" element={<Solution />} />
+        <Route path="/blog/new" element={<NewPost />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/privacy" element={<Legal kind="privacy" />} />
