@@ -5,8 +5,8 @@ export default {
     extend: {
       colors: {
         indigo: {
-          DEFAULT: "#4F46E5",
-          deep: "#3730A3",
+          DEFAULT: "#3B41E1",
+          deep: "#2C31B8",
           soft: "#F5F3FF",
         },
         ink: "#1F2937",        // main text
@@ -19,9 +19,9 @@ export default {
         danger: "#EF4444",
       },
       fontFamily: {
-        display: ["'Bricolage Grotesque'", "sans-serif"],
-        body: ["'Inter'", "sans-serif"],
-        mono: ["'IBM Plex Mono'", "monospace"],
+        display: ["'Red Hat Display'", "sans-serif"],
+        body: ["'Red Hat Text'", "sans-serif"],
+        mono: ["ui-monospace", "monospace"],
       },
       keyframes: {
         sweep: {

@@ -17,7 +17,7 @@ export default function BlogPost() {
       <SiteNav />
       <main>
         <article className="section article"><div className="container article-wrap">
-          <Link to="/blog" className="text-link">← Back to the Blog</Link>
+          <Link to="/blog" className="text-link">Back to the Blog</Link>
           <div className="blog-meta article-meta"><span>{post.tag}</span><span>{post.date} · {post.read}</span></div>
           <h1 className="page-title">{post.title}</h1>
           <p className="article-lede">{post.description}</p>

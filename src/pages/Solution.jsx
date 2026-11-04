@@ -15,8 +15,7 @@ export default function Solution() {
     <>
       <SiteNav />
       <main><article className="section article"><div className="container article-wrap">
-        <SmartLink href="/#solutions" className="text-link">← All solutions</SmartLink>
-        <div className="eyebrow" style={{ marginTop: 28 }}>{s.icon} Solutions</div>
+        <SmartLink href="/#solutions" className="text-link">All solutions</SmartLink>
         <h1 className="page-title">Nokless for {s.name}</h1>
         <p className="article-lede">{s.lede}</p>
         <ul className="solution-points">{s.points.map((p) => <li key={p}>{p}</li>)}</ul>

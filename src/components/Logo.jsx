@@ -1,18 +1,9 @@
-import { useState } from 'react'
-
+// The mark is a transparent PNG; `on="dark"` turns it white for dark surfaces.
 export default function Logo({ className = '', on = 'light' }) {
-  const [logoSrc, setLogoSrc] = useState('/nokless-monogram.jpg')
-
   return (
-    <div className={`brand-lockup ${on === 'dark' ? 'brand-on-dark' : ''} ${className}`}>
-      <img
-        className="brand-monogram"
-        src={logoSrc}
-        alt=""
-        aria-hidden="true"
-        onError={() => setLogoSrc('/nokless-monogram.svg')}
-      />
+    <span className={`brand-lockup ${on === 'dark' ? 'brand-on-dark' : ''} ${className}`}>
+      <img className="brand-mark" src="/nokless-mark.png" alt="" width="32" height="32" />
       <span className="logo-text">Nokless</span>
-    </div>
+    </span>
   )
 }

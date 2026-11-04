@@ -53,7 +53,7 @@ export default function NewPost() {
     <>
       <SiteNav />
       <main><section className="section"><div className="container article-wrap composer">
-        <div className="eyebrow">Blog</div>
+        
         <h1 className="page-title">New post</h1>
         <label>Title<input value={f.title} onChange={set('title')} /></label>
         <label>Category<input value={f.tag} onChange={set('tag')} /></label>
